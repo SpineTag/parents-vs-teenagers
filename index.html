@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Family Bridge | Parents vs. Teenagers</title>
+  <meta name="description" content="An interactive resource helping parents and teenagers understand each other's perspectives, challenge stereotypes, and build common ground.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">⇄</span>
+        <div>
+          <p class="brand-kicker">Parents vs. Teenagers</p>
+          <h1 class="brand-title">The Family Bridge: From <span class="accent">"Us vs. Them"</span> to <span class="accent">"We"</span></h1>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#perspectives">Perspectives</a></li>
+          <li><a href="#stereotypes">Stereotypes</a></li>
+          <li><a href="#tools">Common Ground</a></li>
+          <li><a href="#agreement">Agreement Builder</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Interactive digital resource for families</p>
+          <h2>Different perspectives. Shared goals.</h2>
+          <p class="lead">Conflict between parents and teenagers is often not about a lack of care—it is about different needs, worries, and ways of communicating. This website helps families pause, understand both sides, and create practical agreements together.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#perspectives">Explore perspectives</a>
+            <a class="button secondary" href="#agreement">Build an agreement</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Project purpose">
+          <h3>Purpose &amp; audience</h3>
+          <ul class="check-list">
+            <li><strong>Audience:</strong> Parents, teenagers, and families who want to improve understanding and communication.</li>
+            <li><strong>Message:</strong> When we listen to both perspectives, we can replace assumptions with empathy and conflict with cooperation.</li>
+            <li><strong>Complements poster &amp; presentation:</strong> Instead of repeating them, this site lets you interact with scenarios, challenge stereotypes, and create a personalized family agreement.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="perspectives" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive tool</p>
+          <h2>Perspective Switcher</h2>
+          <p>Select a common situation and switch between the parent lens and teen lens. The goal is not to decide who is "right," but to understand what each person may be feeling and needing.</p>
+        </div>
+
+        <div class="panel">
+          <div class="scenario-controls" role="group" aria-label="Choose a scenario">
+            <button class="chip active" type="button" data-scenario="curfew">Curfew</button>
+            <button class="chip" type="button" data-scenario="phone">Phone &amp; Privacy</button>
+            <button class="chip" type="button" data-scenario="grades">Grades &amp; Expectations</button>
+            <button class="chip" type="button" data-scenario="chores">Chores &amp; Responsibilities</button>
+          </div>
+
+          <div class="lens-controls" role="tablist" aria-label="Choose a perspective">
+            <button class="tab active" type="button" role="tab" aria-selected="true" aria-controls="lens-panel" id="tab-parent" data-lens="parent">Parents' Lens</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="lens-panel" id="tab-teen" data-lens="teen" tabindex="-1">Teens' Lens</button>
+          </div>
+
+          <article class="lens-panel" id="lens-panel" role="tabpanel" aria-labelledby="tab-parent">
+            <h3 id="scenario-title">Curfew</h3>
+            <p id="scenario-summary" class="scenario-summary"></p>
+            <div class="lens-grid">
+              <div class="lens-card">
+                <h4>What they may feel</h4>
+                <p id="lens-feel"></p>
+              </div>
+              <div class="lens-card">
+                <h4>What they care about</h4>
+                <ul id="lens-care" class="plain-list"></ul>
+              </div>
+              <div class="lens-card">
+                <h4>What can help</h4>
+                <ul id="lens-help" class="plain-list"></ul>
+              </div>
+            </div>
+            <p class="bridge-note" id="lens-bridge"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stereotypes" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Challenge assumptions</p>
+          <h2>Stereotype Buster</h2>
+          <p>Click or tap a card to flip it. Each card contrasts a common assumption with a more balanced reality.</p>
+        </div>
+
+        <div class="card-grid" id="stereotype-grid">
+          <button class="flip-card" type="button" aria-expanded="false">
+            <span class="flip-inner">
+              <span class="flip-face front">
+                <span class="tag">About teens</span>
+                <strong>"Teenagers are just rebellious."</strong>
+                <span class="hint">Flip for reality</span>
+              </span>
+              <span class="flip-face back">
+                <strong>Reality</strong>
+                <span>Seeking independence is a normal part of growing up. What can look like rebellion may be a teen trying to make choices, express identity, or be trusted with responsibility.</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card" type="button" aria-expanded="false">
+            <span class="flip-inner">
+              <span class="flip-face front">
+                <span class="tag">About teens</span>
+                <strong>"Teens don't care about family rules."</strong>
+                <span class="hint">Flip for reality</span>
+              </span>
+              <span class="flip-face back">
+                <strong>Reality</strong>
+                <span>Many teens do care, but they want rules to feel fair, clear, and explained. They are more likely to cooperate when their perspective is heard and expectations are consistent.</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card" type="button" aria-expanded="false">
+            <span class="flip-inner">
+              <span class="flip-face front">
+                <span class="tag">About parents</span>
+                <strong>"Parents just want to control everything."</strong>
+                <span class="hint">Flip for reality</span>
+              </span>
+              <span class="flip-face back">
+                <strong>Reality</strong>
+                <span>Parents often set limits because they feel responsible for safety, health, and guidance. Their actions may come from care and concern, even when it feels restrictive to a teen.</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card" type="button" aria-expanded="false">
+            <span class="flip-inner">
+              <span class="flip-face front">
+                <span class="tag">About parents</span>
+                <strong>"Parents don't understand what it's like to be a teen today."</strong>
+                <span class="hint">Flip for reality</span>
+              </span>
+              <span class="flip-face back">
+                <strong>Reality</strong>
+                <span>Some pressures are different today, but parents have experienced stress, friendships, and change too. Understanding improves when both sides explain their experiences instead of assuming the other cannot relate.</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card" type="button" aria-expanded="false">
+            <span class="flip-inner">
+              <span class="flip-face front">
+                <span class="tag">About conflict</span>
+                <strong>"Arguments mean the relationship is broken."</strong>
+                <span class="hint">Flip for reality</span>
+              </span>
+              <span class="flip-face back">
+                <strong>Reality</strong>
+                <span>Disagreements are common in families, especially during adolescence. Conflict can become constructive when people listen, manage emotions, and work toward solutions together.</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card" type="button" aria-expanded="false">
+            <span class="flip-inner">
+              <span class="flip-face front">
+                <span class="tag">About conflict</span>
+                <strong>"One side has to win."</strong>
+                <span class="hint">Flip for reality</span>
+              </span>
+              <span class="flip-face back">
+                <strong>Reality</strong>
+                <span>Healthy relationships are not about winning arguments. Compromise, clear boundaries, and mutual respect can help both parents and teens feel heard and supported.</span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Practical support</p>
+          <h2>Common Ground Tools</h2>
+          <p>Use these strategies to move from disagreement to problem-solving. They are designed for real conversations at home.</p>
+        </div>
+
+        <div class="tools-grid">
+          <article class="tool-card">
+            <h3>Conversation script</h3>
+            <p>Try this structure to reduce blame and keep the focus on solutions:</p>
+            <ol class="plain-list ordered">
+              <li><strong>I feel...</strong> (name the emotion)</li>
+              <li><strong>When...</strong> (describe the situation, not the person)</li>
+              <li><strong>I need...</strong> (explain what would help)</li>
+              <li><strong>Can we...?</strong> (suggest a fair next step)</li>
+            </ol>
+            <p class="example"><strong>Example:</strong> "I feel stressed when homework is brought up right after school. I need a short break. Can we talk about it after 30 minutes?"</p>
+          </article>
+
+          <article class="tool-card">
+            <h3>Negotiation steps</h3>
+            <ul class="plain-list">
+              <li><strong>Define the issue:</strong> Focus on one topic at a time.</li>
+              <li><strong>Share both perspectives:</strong> Each person explains concerns and goals.</li>
+              <li><strong>Identify non-negotiables:</strong> Name safety or core responsibilities clearly.</li>
+              <li><strong>Brainstorm options:</strong> Look for compromises or trial periods.</li>
+              <li><strong>Agree and review:</strong> Decide what to try and when to check in.</li>
+            </ul>
+          </article>
+
+          <article class="tool-card">
+            <h3>Quick de-escalation tips</h3>
+            <ul class="plain-list">
+              <li>Take a short break if voices rise; return when calm.</li>
+              <li>Listen to understand before responding.</li>
+              <li>Avoid labels like "always" and "never."</li>
+              <li>Acknowledge the other person's concern, even if you disagree.</li>
+              <li>Focus on the current issue instead of past arguments.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agreement" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Create together</p>
+          <h2>Family Agreement Builder</h2>
+          <p>Use this tool to turn understanding into action. Fill in expectations and commitments, then print or save the agreement as a starting point for discussion.</p>
+        </div>
+
+        <div class="agreement-layout">
+          <form id="agreement-form" class="panel form-panel">
+            <div class="form-grid">
+              <label>
+                Family / household name (optional)
+                <input type="text" id="family-name" name="familyName" placeholder="e.g., The Rivera Family">
+              </label>
+              <label>
+                Date
+                <input type="date" id="agreement-date" name="agreementDate">
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>Topic 1: Curfew / time management</legend>
+              <label>Our agreement
+                <textarea id="topic1-agreement" rows="3" placeholder="What is the expectation?"></textarea>
+              </label>
+              <div class="form-grid">
+                <label>Teen commitment
+                  <input type="text" id="topic1-teen" placeholder="e.g., I will text if I’m running late.">
+                </label>
+                <label>Parent commitment
+                  <input type="text" id="topic1-parent" placeholder="e.g., I will listen before reacting.">
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Topic 2: Phone, privacy, and trust</legend>
+              <label>Our agreement
+                <textarea id="topic2-agreement" rows="3" placeholder="What boundaries and responsibilities feel fair?"></textarea>
+              </label>
+              <div class="form-grid">
+                <label>Teen commitment
+                  <input type="text" id="topic2-teen" placeholder="e.g., I will follow agreed screen-time limits.">
+                </label>
+                <label>Parent commitment
+                  <input type="text" id="topic2-parent" placeholder="e.g., I will explain concerns clearly.">
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Topic 3: School, chores, or other responsibilities</legend>
+              <label>Our agreement
+                <textarea id="topic3-agreement" rows="3" placeholder="What needs to be done, and how will we support each other?"></textarea>
+              </label>
+              <div class="form-grid">
+                <label>Teen commitment
+                  <input type="text" id="topic3-teen" placeholder="e.g., I will keep track of deadlines/chores.">
+                </label>
+                <label>Parent commitment
+                  <input type="text" id="topic3-parent" placeholder="e.g., I will offer help without taking over.">
+                </label>
+              </div>
+            </fieldset>
+
+            <label>How we will handle disagreements
+              <textarea id="disagreements" rows="3" placeholder="e.g., take a break, listen first, revisit the agreement in one week"></textarea>
+            </label>
+
+            <label>Check-in date
+              <input type="date" id="checkin-date" name="checkinDate">
+            </label>
+
+            <div class="form-actions">
+              <button type="button" class="button primary" id="update-preview">Update preview</button>
+              <button type="button" class="button secondary" id="print-agreement">Print / save as PDF</button>
+              <button type="button" class="button ghost" id="clear-agreement">Clear form</button>
+            </div>
+          </form>
+
+          <aside class="panel preview-panel" aria-live="polite">
+            <h3>Agreement preview</h3>
+            <div id="agreement-preview" class="agreement-preview">
+              <p class="muted">Fill in the form and select <strong>Update preview</strong> to see your agreement here.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>The Family Bridge</strong> — a digital product for the "Parents vs. Teenagers" project.</p>
+      <p>Designed to complement the poster and oral presentation by offering interactive understanding and practical tools for families.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
