@@ -512,21 +512,38 @@ legend {
 }
 
 @media print {
+  @page { margin: 12mm; }
+
   body { background: #fff; }
-  .site-header,
-  .hero-actions,
-  .nav-list,
-  .form-panel,
-  .site-footer .container p:last-child,
-  .skip-link { display: none !important; }
-  .hero,
-  .section { padding: 0.5rem 0; }
-  .section.alt { background: #fff; }
-  .agreement-layout { grid-template-columns: 1fr; }
-  .preview-panel {
+
+  body.print-agreement .site-header,
+  body.print-agreement .hero,
+  body.print-agreement main > section:not(#agreement),
+  body.print-agreement .site-footer,
+  body.print-agreement #agreement .section-heading,
+  body.print-agreement #agreement .form-panel,
+  body.print-agreement .skip-link {
+    display: none !important;
+  }
+
+  body.print-agreement #agreement,
+  body.print-agreement #agreement .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  body.print-agreement #agreement { background: #fff; }
+
+  body.print-agreement .agreement-layout { display: block; }
+
+  body.print-agreement .preview-panel {
     position: static;
     box-shadow: none;
     border: 1px solid #ccc;
+    margin: 0;
   }
-  .container { width: 100%; }
+
+  body.print-agreement .preview-panel h3 { margin-bottom: 0.75rem; }
 }

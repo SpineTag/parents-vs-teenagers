@@ -315,9 +315,15 @@ function setDefaultDate() {
 function setupAgreementBuilder() {
   setDefaultDate();
   $("#update-preview").addEventListener("click", updateAgreementPreview);
+  const cleanupPrintMode = () => document.body.classList.remove("print-agreement");
+  window.addEventListener("afterprint", cleanupPrintMode);
+
   $("#print-agreement").addEventListener("click", () => {
     updateAgreementPreview();
+    document.body.classList.add("print-agreement");
     window.print();
+    // Fallback cleanup in case afterprint is not fired consistently.
+    setTimeout(cleanupPrintMode, 1000);
   });
   $("#clear-agreement").addEventListener("click", clearAgreement);
 }
